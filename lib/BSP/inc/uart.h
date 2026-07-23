@@ -7,6 +7,7 @@
 #ifndef UART_H
 #define UART_H
 
+#include "stm32f1xx_hal.h"
 #include <stdint.h>
 
 /*
@@ -37,6 +38,6 @@ uint8_t uart_deinit(void);
 *            - 
 * @note       
 */
-void uart_write(uint8_t *buf, uint16_t len);
+uint8_t uart_write(UART_HandleTypeDef *huart, uint8_t *data, uint16_t len);
 
 #endif // UART_H

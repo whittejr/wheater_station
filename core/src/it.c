@@ -7,7 +7,7 @@
 */
 
 #include "it.h"
-#include "stm32wbxx_hal.h"
+// #include "stm32wbxx_hal.h"
 
 void SysTick_Handler(void) {
     HAL_IncTick();

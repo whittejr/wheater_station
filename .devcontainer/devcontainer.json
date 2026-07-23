@@ -20,7 +20,10 @@
                 "marus25.cortex-debug",
                 "mcu-debug.memory-view",
                 "mcu-debug.rtos-views"
-            ]
+            ],
+            "settings": {
+                "clangd.path": "clangd"
+            }
         }     
     }
 }

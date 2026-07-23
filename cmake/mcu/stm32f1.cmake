@@ -1,10 +1,11 @@
-# message(STATUS "Configurando paths e flags para a familia STM32F1...")
+message(STATUS "Configurando paths e flags para a familia STM32F1...")
 
 set(THIRD_PARTY "${CMAKE_CURRENT_SOURCE_DIR}/lib/third_party/stm32cubef1/Drivers")
-
+SET(MCU_LINKER STM32F101X6_FLASH.ld)
+SET(MCU_STARTUP startup_stm32f101xe.s)
 set(CMSIS_DIR "${CMAKE_CURRENT_SOURCE_DIR}/lib/third_party/stm32cubef1/Drivers/CMSIS/Device/ST/STM32F1xx/Source/Templates/")
-set(LINKER_SCRIPT "${CMSIS_DIR}/gcc/linker/STM32F103XB_FLASH.ld")
-set(STARTUP_FILE "${CMSIS_DIR}/gcc/startup_stm32f103xb.s")
+set(LINKER_SCRIPT "${CMSIS_DIR}/gcc/linker/${MCU_LINKER}")
+set(STARTUP_FILE "${CMSIS_DIR}/gcc/${MCU_STARTUP}")
 
 set(HAL_SOURCES
     ${STARTUP_FILE}
@@ -15,6 +16,7 @@ set(HAL_SOURCES
     "${THIRD_PARTY}/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c"
     "${THIRD_PARTY}/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c"
     "${THIRD_PARTY}/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c"
+    "${THIRD_PARTY}/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c"
     
     "${CMSIS_DIR}/system_stm32f1xx.c"
 )

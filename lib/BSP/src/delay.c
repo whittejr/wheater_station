@@ -8,7 +8,8 @@
 
 #include "delay.h"
 #include "stdint.h"
+#include "stm32f1xx_hal.h"
 
-void delay_ms(uint32_t ms) {
-    // HAL_Delay(ms);
+void bsp_delay_ms(uint32_t ms) {
+    HAL_Delay(ms);
 }

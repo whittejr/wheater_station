@@ -11,6 +11,6 @@
 
 #include <stdint.h>
 
-void delay_ms(uint32_t ms);
+void bsp_delay_ms(uint32_t ms);
 
 #endif // DELAY_H
